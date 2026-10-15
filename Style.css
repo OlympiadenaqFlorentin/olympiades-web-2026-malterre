@@ -152,3 +152,11 @@ h1, h2, h3, p{
     justify-content: center;
     align-items: center;
 } */
+/*------------------------Musee-tarifs-----------------------*/
+body.body-Login {
+    background-image: url('/illustrations/Fond_RaceParc.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
