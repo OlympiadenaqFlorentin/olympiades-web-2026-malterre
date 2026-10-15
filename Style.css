@@ -5,11 +5,12 @@ body{
     background-color: #111214;
 }
 *{
-  font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
-h1{
+h1, h2, h3, p{
     color: #FFFFFF;
 }
+
 /*---------------NAV-BAR-----------------*/
 .navbar {
     position: fixed;
@@ -52,8 +53,8 @@ h1{
     object-fit: cover;
 }
 
-.section-haut {
-  height: 100rem;
+.section{
+  height: 70rem;
   width: auto;
 }
 /*---------------Presentation-----------------*/
@@ -61,9 +62,9 @@ h1{
     display: flex;
     justify-content: center; 
     align-items: center;    
-    height: 25%;
-    width: auto;
-    margin: 20%;
+    height: 30%;
+    width: 50%;
+    margin: 10%;
     background-color: #991900;
     border-radius: 2rem;
     overflow: hidden;        
@@ -71,7 +72,7 @@ h1{
 }
 
 .titre_presentation {
-    margin: 10%;
+    margin: 5%;
 }
 
 .txt_presentation {
@@ -82,8 +83,8 @@ h1{
 }
 
 .image_presentation {
-    max-height: 80%;     
-    max-width: 80%;
+    max-height: 60%;     
+    max-width: 60%;
     height: auto;
     object-fit: contain;
     border-radius: 2rem;
@@ -91,6 +92,7 @@ h1{
 }
 .bt-plus{
     text-decoration: none !important;
+    border-bottom: none !important;
     display: flex;
     background-color: #FFFFFF;
     border-radius: 2rem;
@@ -102,7 +104,20 @@ h1{
     margin-right: 5%;
 }
 
-.section-bas {
-  height: 100rem;
-  width: auto;
+/*------------------------Musee------------------------*/
+.presentation_Musee{
+    border-radius: 2rem;
+    background-color: #991900;
+    height: auto;
+    width: 50%;
+    padding: 2%;
+}
+.tarifs-musée{
+
+}
+.image_tarifs{
+    border-radius: 2rem;
+    height: 5%;
+    width: auto;
+    margin: 5%;
 }
