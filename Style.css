@@ -20,31 +20,49 @@ h1, h2, h3, p{
     background-color: #991900;
     height: 3rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; 
     align-items: center;
     z-index: 1000;
     font-size: 1.5rem;
+    padding: 0 1rem; 
+    box-sizing: border-box;
 }
 
-.navbar a{
+.navbar a {
     color: #FFFFFF;
 }
-.navbar a{
-    color: #FFFFFF;
-}
-.navbar a:hover{
+
+.navbar a:hover {
     color: #FFDE21;
 }
-
 
 .aNavBar {
     text-decoration: none;
     color: black;
     margin: 0 1rem;
 }
-.Nom-NavBar{
-    color: #FFFFFF;
+
+.container_logo_login {
+    margin-left: auto; 
+    height: 70%;
+    width: auto;
 }
+
+.logo_login {
+    display: block;
+    height: 100%;
+    min-width: 40px; 
+    min-height: 40px;
+}
+
+.logo_login img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+/* .Nom-NavBar{
+    color: #FFFFFF;
+} */
 /*---------------Accueil-----------------*/
 .image_index {
     display: block;
@@ -78,7 +96,7 @@ h1, h2, h3, p{
 .txt_presentation {
     padding: 10%;
     height: auto;
-    width: 40%;
+    width: 50%;
     color: #FFFFFF;
 }
 
@@ -102,6 +120,7 @@ h1, h2, h3, p{
     justify-content: center;
     align-items: center;
     margin-right: 5%;
+    margin-left: 5%;
 }
 
 /*------------------------Musee------------------------*/
@@ -112,12 +131,24 @@ h1, h2, h3, p{
     width: 50%;
     padding: 2%;
 }
-.tarifs-musée{
 
+/*------------------------Musee-tarifs-----------------------*/
+/* .tarifs-musée{
+    border-radius: 2rem;
+    background-color: #991900;
+    height: auto;
+    width: 20%;
+    margin: 20%;
 }
 .image_tarifs{
     border-radius: 2rem;
-    height: 5%;
-    width: auto;
-    margin: 5%;
+    height: 70%;
+    width: 70%;
+    margin: 25%;
+    
 }
+.txt_tarifs{
+    padding: 5%;
+    justify-content: center;
+    align-items: center;
+} */
