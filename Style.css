@@ -1,0 +1,15 @@
+.navbar{
+    position: sticky;
+    background-color: lightgray;
+    display: flex;
+    height: 5rem;
+}
+/* .logo_Nav{
+
+} */
+.aNavBar{
+    text-decoration: none;
+    color: black;
+    margin-left: 100%;
+}
+
