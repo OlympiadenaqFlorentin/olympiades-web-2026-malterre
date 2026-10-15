@@ -1,22 +1,16 @@
 <?php
 require_once("/Back/PDO.php");
 Class User{
-    public $id_user;
     public $nom_utilisateur;
     public $mdp;
     public $grade;
 
-    function __construct($id_user, $nom_utilisateur, $mdp, $grade){
-        $this->id = $id;
-        $this->nom = $nom;
+    function __construct($nom_utilisateur, $mdp, $grade){
         $this->nom_utilisateur = $nom_utilisateur;
         $this->mdp = $mdp;
         $this->grade = $grade;
     }
 
-    function setnom($nom){
-        $this->nom = $nom;
-    }
     function setnom_utilisateur($nom_utilisateur){
         $this->nom_utilisateur = $nom_utilisateur;
     }
@@ -30,9 +24,6 @@ Class User{
     function getid(){
         return $this->id;
     }
-    function getnom(){
-        return $this->nom;
-    }
     function getnom_utilisateur(){
         return $this->nom_ulisateur;
     }
@@ -45,8 +36,7 @@ Class User{
 
     public function create(){
         //manque un truc ?
-        $stmt = $sql->prepare("INSERT INTO User (nom, nom_utilisateur, mdp, grade) VALUES (:nom, :nom_utilisateur, :mdp, :grade);");
-        $stmt->binparam(":nom",$nom);
+        $stmt = $sql->prepare("INSERT INTO User (nom_utilisateur, mdp, grade) VALUES (:nom_utilisateur, :mdp, :grade);");
         $stmt->binparam(":nom_utilisateur",$nom_utilisateur);
         $stmt->binparam(":mdp",$mdp);
         $stmt->binparam(":grade",$grade);

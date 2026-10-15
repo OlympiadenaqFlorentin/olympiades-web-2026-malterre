@@ -152,11 +152,20 @@ h1, h2, h3, p{
     justify-content: center;
     align-items: center;
 } */
-/*------------------------Musee-tarifs-----------------------*/
+/*------------------------Login-----------------------*/
 body.body-Login {
     background-image: url('/illustrations/Fond_RaceParc.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+.form_Connexion{
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #991900;
+    border-radius: 2rem;
+    height: auto;
+    width: 25%;
 }
