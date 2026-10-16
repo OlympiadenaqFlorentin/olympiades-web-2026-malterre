@@ -263,7 +263,11 @@ h1, h2, h3, p{
 }
 
 /*------------------------Musee-tarifs-----------------------*/
-
+.position-tarifs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .tarifs-musée {
     position: relative;
     isolation: isolate;
@@ -315,6 +319,203 @@ h1, h2, h3, p{
 }
 .tarifs-musée:hover::after {
     background: rgba(0, 0, 0, 0.4);
+}
+
+/*------------------------Billeterie-----------------------*/
+
+/* Section billetterie */
+.billetterie {
+    background: #111214;
+    color: white;
+    padding: 50px 5%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Titre */
+.titre-billetterie {
+    margin-bottom: 30px;
+}
+
+.titre-billetterie h2 {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.titre-billetterie p {
+    color: #ddd;
+    font-size: 1rem;
+}
+
+/* Disposition des cartes */
+.cartes-tarifs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Carte individuelle */
+.carte-tarif {
+    background: #08090a;
+    border: 2px solid #ff1725;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.carte-tarif:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 23, 37, 0.2);
+}
+
+/* Image */
+.image-tarif {
+    height: 190px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.image-tarif::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 45%,
+        rgba(0, 0, 0, 0.85)
+    );
+}
+
+/* Images à remplacer par tes fichiers */
+.adulte {
+    background-image: url("illustrations/adulte.png");
+}
+
+.enfant {
+    background-image: url("illustrations/enfant.png");
+}
+
+.famille {
+    background-image: url("illustrations/Famille.png");
+}
+
+/* Contenu */
+.contenu-tarif {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contenu-tarif h3 {
+    background: linear-gradient(90deg, #ff1725, #a90000);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-style: italic;
+    margin: -40px -20px 10px;
+    padding: 12px 20px;
+    position: relative;
+}
+
+.age {
+    color: #ddd;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+
+.mention-prix {
+    color: #ddd;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.prix {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 900;
+    font-style: italic;
+    margin: 0 0 20px;
+}
+
+.prix span {
+    color: #ff1725;
+    font-size: 1.8rem;
+}
+
+/* Liste des avantages */
+.contenu-tarif ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.contenu-tarif li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.contenu-tarif li::before {
+    content: "✓";
+    color: #ff1725;
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+/* Bouton */
+.btn-reserver {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, #ff1725, #b90000);
+    border-radius: 30px;
+    padding: 14px;
+    font-weight: 900;
+    font-style: italic;
+    margin-top: auto;
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.btn-reserver:hover {
+    background: white;
+    color: #ff1725;
+    transform: scale(1.03);
+}
+
+/* Tablettes */
+@media (max-width: 900px) {
+    .cartes-tarifs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Téléphones */
+@media (max-width: 600px) {
+    .billetterie {
+        padding: 35px 5%;
+    }
+
+    .cartes-tarifs {
+        grid-template-columns: 1fr;
+    }
+
+    .titre-billetterie h2 {
+        font-size: 1.8rem;
+    }
+
+    .image-tarif {
+        height: 210px;
+    }
 }
 
 /*------------------------Login-----------------------*/
