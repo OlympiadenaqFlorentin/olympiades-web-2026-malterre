@@ -241,3 +241,30 @@ body.body-Login {
     height: auto;
     width: 25%;
 }
+/*------------------------Atractions-----------------------*/
+.container_attractions{
+    display: flex;
+}
+.container_txt_attractions{
+    background: var(--race-card);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    margin: 10%;
+    padding: 2%;
+    width: 25%;
+    height: auto;
+}
+.container_info_attractions{
+    margin-left: 0%;
+    background: var(--race-card);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    margin: 10%;
+    padding: 2%;
+    width: 25%;
+    height: auto; 
+}
+.container_txt_attractions:hover,
+.container_info_attractions:hover {
+    transform: translateY(-6px);
+    border-color: var(--race-red);
+    box-shadow: 0 16px 40px #991900;
+}
