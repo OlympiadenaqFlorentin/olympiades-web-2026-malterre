@@ -10,6 +10,9 @@ body{
 h1, h2, h3, p{
     color: #FFFFFF;
 }
+.position{
+    display: flex;
+}
 
 /*---------------NAV-BAR-----------------*/
 .navbar {
@@ -246,7 +249,7 @@ body.body-Login {
     display: flex;
 }
 .container_txt_attractions{
-    background: var(--race-card);
+    background: #991900;
     border: 1px solid rgba(255, 255, 255, 0.09);
     margin: 10%;
     padding: 2%;
@@ -255,16 +258,41 @@ body.body-Login {
 }
 .container_info_attractions{
     margin-left: 0%;
-    background: var(--race-card);
+    background: #991900;
     border: 1px solid rgba(255, 255, 255, 0.09);
     margin: 10%;
     padding: 2%;
     width: 25%;
     height: auto; 
 }
-.container_txt_attractions:hover,
-.container_info_attractions:hover {
-    transform: translateY(-6px);
-    border-color: var(--race-red);
-    box-shadow: 0 16px 40px #991900;
+.Status{
+    background-color: black;
+    border-radius: 2rem;
+    height: 10%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.Taille{
+    background-color: black;
+    border-radius: 2rem;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.Temps{
+    background-color: black;
+    border-radius: 2rem;
+    height: 10%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
 }
