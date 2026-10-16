@@ -43,9 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="nom">Nom d'utilisateur / Email</label>
     <input type="text" id="nom" name="nom_utilisateur" required placeholder="Votre identifiant">
     
-    <label for="grade">Grade</label>
-    <input type="text" id="grade" name="grade" required placeholder="Votre grade">
-    
     <label for="mdp">Votre mot de passe</label>
     <input type="password" id="mdp" name="mdp" required placeholder="Votre mot de passe">
     

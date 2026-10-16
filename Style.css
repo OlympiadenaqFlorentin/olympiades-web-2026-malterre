@@ -1,4 +1,4 @@
-
+/*import la police d'écriture Montserrat*/
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&family=Teko:wght@400;500;600;700&display=swap');
 
 body{
@@ -36,7 +36,7 @@ h1, h2, h3, p{
 }
 
 .navbar a:hover {
-    color: #FFDE21;
+    border-bottom: 2px solid white;
 }
 
 .aNavBar {
@@ -63,9 +63,20 @@ h1, h2, h3, p{
     height: 100%;
     object-fit: contain;
 }
-/* .Nom-NavBar{
-    color: #FFFFFF;
-} */
+@media (max-width: 600px) {
+    .navbar {
+        gap: 0.25rem;
+        padding: 0.5rem;
+    }
+    .aNavBar {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+    }
+    .logo_login img {
+        width: 28px;      
+        height: 28px;
+    }
+}
 /*---------------Accueil-----------------*/
 .image_index {
     display: block;
@@ -75,8 +86,8 @@ h1, h2, h3, p{
 }
 
 .section{
-  height: 50rem;
-  width: auto;
+    height: 50rem;
+    width: auto;
 }
 
 /*---------------Animations-----------------*/
@@ -208,43 +219,30 @@ h1, h2, h3, p{
 .presentation_Musee {
     background-color: #991900;
     color: white;
-
     width: 92%;
     margin: 2% auto;
     padding: 4% 3.5%;
     box-sizing: border-box;
-
     border-radius: 3rem;
-
     font-family: 'Montserrat', sans-serif;
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Titre */
 .presentation_Musee h2 {
     font-size: 2.5rem;
     font-weight: 800;
-
     margin: 0 0 1.5rem 0;
 }
-
-/* Texte descriptif */
 .presentation_Musee p {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.4;
-
     margin: 0;
 }
-
-/* Effet au survol */
 .presentation_Musee:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Adaptation aux téléphones */
 @media (max-width: 768px) {
     .presentation_Musee {
         width: 94%;
@@ -323,19 +321,15 @@ h1, h2, h3, p{
 
 /*------------------------Billeterie-----------------------*/
 
-/* Section billetterie */
 .billetterie {
     background: #111214;
     color: white;
     padding: 50px 5%;
     font-family: 'Montserrat', sans-serif;
 }
-
-/* Titre */
 .titre-billetterie {
     margin-bottom: 30px;
 }
-
 .titre-billetterie h2 {
     color: white;
     font-size: 2.2rem;
@@ -343,21 +337,16 @@ h1, h2, h3, p{
     font-style: italic;
     margin-bottom: 10px;
 }
-
 .titre-billetterie p {
     color: #ddd;
     font-size: 1rem;
 }
-
-/* Disposition des cartes */
 .cartes-tarifs {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
     align-items: stretch;
 }
-
-/* Carte individuelle */
 .carte-tarif {
     background: #08090a;
     border: 2px solid #ff1725;
@@ -365,34 +354,24 @@ h1, h2, h3, p{
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .carte-tarif:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(255, 23, 37, 0.2);
 }
-
-/* Image */
 .image-tarif {
     height: 190px;
     background-size: cover;
     background-position: center;
     position: relative;
 }
-
 .image-tarif::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        transparent 45%,
-        rgba(0, 0, 0, 0.85)
-    );
+    background: linear-gradient(transparent 45%, rgba(0, 0, 0, 0.85));
 }
-
-/* Images à remplacer par tes fichiers */
 .adulte {
     background-image: url("illustrations/adulte.png");
 }
@@ -404,15 +383,12 @@ h1, h2, h3, p{
 .famille {
     background-image: url("illustrations/Famille.png");
 }
-
-/* Contenu */
 .contenu-tarif {
     padding: 20px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
-
 .contenu-tarif h3 {
     background: linear-gradient(90deg, #ff1725, #a90000);
     color: white;
@@ -423,20 +399,17 @@ h1, h2, h3, p{
     padding: 12px 20px;
     position: relative;
 }
-
 .age {
     color: #ddd;
     font-size: 0.8rem;
     text-transform: uppercase;
     margin: 0 0 20px;
 }
-
 .mention-prix {
     color: #ddd;
     font-size: 0.8rem;
     margin: 0;
 }
-
 .prix {
     color: white;
     font-size: 2.8rem;
@@ -444,33 +417,26 @@ h1, h2, h3, p{
     font-style: italic;
     margin: 0 0 20px;
 }
-
 .prix span {
     color: #ff1725;
     font-size: 1.8rem;
 }
-
-/* Liste des avantages */
 .contenu-tarif ul {
     list-style: none;
     padding: 0;
     margin: 0 0 25px;
 }
-
 .contenu-tarif li {
     margin-bottom: 12px;
     font-size: 0.9rem;
     line-height: 1.4;
 }
-
 .contenu-tarif li::before {
     content: "✓";
     color: #ff1725;
     font-weight: 900;
     margin-right: 10px;
 }
-
-/* Bouton */
 .btn-reserver {
     display: block;
     text-align: center;
@@ -482,24 +448,13 @@ h1, h2, h3, p{
     font-weight: 900;
     font-style: italic;
     margin-top: auto;
-    transition: background 0.3s ease,
-                transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
-
 .btn-reserver:hover {
     background: white;
     color: #ff1725;
     transform: scale(1.03);
 }
-
-/* Tablettes */
-@media (max-width: 900px) {
-    .cartes-tarifs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* Téléphones */
 @media (max-width: 600px) {
     .billetterie {
         padding: 35px 5%;
@@ -526,7 +481,6 @@ body.body-Login {
     background: #111214;
     color: white;
     font-family: 'Montserrat', sans-serif;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -535,29 +489,21 @@ body.body-Login {
     background-position: center;
     background-attachment: fixed;
 }
-
-/* Formulaire de connexion */
 .form_Connexion {
     width: 100%;
     max-width: 420px;
     padding: 40px;
     box-sizing: border-box;
-
     background: rgba(8, 9, 10, 0.95);
     border: 2px solid #ff1725;
     border-radius: 22px;
-
     box-shadow: 0 0 25px rgba(255, 23, 37, 0.15);
-
     display: flex;
     flex-direction: column;
     gap: 12px;
-
     position: relative;
     overflow: hidden;
 }
-
-/* Bande rouge en haut du formulaire */
 .form_Connexion::before {
     content: "";
     position: absolute;
@@ -567,80 +513,54 @@ body.body-Login {
     height: 5px;
     background: linear-gradient(90deg, #990000, #ff1725, #990000);
 }
-
-/* Labels */
 .form_Connexion label {
     color: white;
     font-size: 0.9rem;
     font-weight: 700;
     margin-top: 8px;
 }
-
-/* Champs de saisie */
 .form_Connexion input {
     width: 100%;
     padding: 14px 16px;
     box-sizing: border-box;
-
     background: #191a1d;
     color: white;
-
     border: 1px solid #444;
     border-radius: 10px;
-
     font-family: inherit;
     font-size: 0.95rem;
-
     outline: none;
-    transition: border-color 0.3s ease,
-                box-shadow 0.3s ease,
-                background 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
-
-/* Texte indicatif */
 .form_Connexion input::placeholder {
     color: #888;
 }
-
-/* Effet quand on sélectionne un champ */
 .form_Connexion input:focus {
     border-color: #ff1725;
     background: #202124;
     box-shadow: 0 0 10px rgba(255, 23, 37, 0.25);
 }
-
-/* Bouton de connexion */
 .form_Connexion button {
     margin-top: 18px;
     padding: 15px;
-
     border: none;
     border-radius: 30px;
-
     background: linear-gradient(90deg, #ff1725, #b90000);
     color: white;
-
     font-family: inherit;
     font-size: 1rem;
     font-weight: 900;
     font-style: italic;
     text-transform: uppercase;
     letter-spacing: 1px;
-
     cursor: pointer;
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
-
-/* Survol du bouton */
 .form_Connexion button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 23, 37, 0.35);
     background: linear-gradient(90deg, #ff303c, #e00000);
 }
-
-/* Clic sur le bouton */
 .form_Connexion button:active {
     transform: scale(0.98);
 }
@@ -651,11 +571,9 @@ body.body-Login {
     font-style: italic;
     margin: 10px 0 0;
 }
-
 .form_Connexion h2 span {
     color: #ff1725;
 }
-
 .form_Connexion .sous-titre {
     text-align: center;
     color: #aaa;
@@ -663,8 +581,6 @@ body.body-Login {
     letter-spacing: 2px;
     margin: 0 0 15px;
 }
-
-/* Adaptation aux téléphones */
 @media (max-width: 500px) {
     .form_Connexion {
         max-width: 90%;
