@@ -1,5 +1,5 @@
 <?php
-require_once("/Back/PDO.php");
+require_once __DIR__ . '/PDO.php';
 Class User{
     public $nom_utilisateur;
     public $mdp;
