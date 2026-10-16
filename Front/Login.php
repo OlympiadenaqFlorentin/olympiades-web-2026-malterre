@@ -7,10 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $grade = trim($_POST['grade'] ?? '');
     $mdp = trim($_POST['mdp'] ?? '');
 
-    $user = new User($pdo);
+    $mdp = password_hash($mdp, PASSWORD_BCRYPT);
+
+    $user = new User_($pdo);
     $user->create($nom_utilisateur, $grade, $mdp);
 
-   echo('insert réussie');
+    echo 'insert réussie';
     exit;
 };
 ?>
@@ -34,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="container_logo_login"><a class="logo_login" href="Login.php"><img src="/illustrations/Icône profil avec badge circulaire.png"></a>
         </nav>
     </header>
-    <form class="form_Connexion">
+    <form class="form_Connexion" method="POST"  >
         <label for="nom">Nom d'utilisateur / Email </label><br>
         <input type="text" name="nom_utilisateur" required placeholder="identifiant"><br>
         <input type="text" name="grade" required placeholder="admin"><br>
