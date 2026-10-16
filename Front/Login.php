@@ -36,13 +36,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="container_logo_login"><a class="logo_login" href="Login.php"><img src="/illustrations/Icône profil avec badge circulaire.png"></a>
         </nav>
     </header>
-    <form class="form_Connexion" method="POST"  >
-        <label for="nom">Nom d'utilisateur / Email </label><br>
-        <input type="text" name="nom_utilisateur" required placeholder="identifiant"><br>
-        <input type="text" name="grade" required placeholder="admin"><br>
-        <label for="mdp">Votre Mot de passe</label><br>
-        <input type="password" name="mdp" required placeholder="Mot de passe"><br>
+    <form class="form_Connexion" method="POST">
+    <h2>RACE<span>PARC</span></h2>
+    <p class="sous-titre">ACCÈS À VOTRE ESPACE</p>
 
-        <button type="submit">Se Connecter</button>
-    </form>
+    <label for="nom">Nom d'utilisateur / Email</label>
+    <input type="text" id="nom" name="nom_utilisateur" required placeholder="Votre identifiant">
+    
+    <label for="grade">Grade</label>
+    <input type="text" id="grade" name="grade" required placeholder="Votre grade">
+    
+    <label for="mdp">Votre mot de passe</label>
+    <input type="password" id="mdp" name="mdp" required placeholder="Votre mot de passe">
+    
+    <button type="submit">Se connecter →</button>
+</form>
 </body>

@@ -6,22 +6,19 @@ Class User_{
     public $grade;
     public $mdp;
 
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
-    }
-    function __construct($nom_utilisateur, $grade, $mdp){
+    function __construct(string $nom_utilisateur, string $grade, string $mdp){
         $this->nom_utilisateur = $nom_utilisateur;
         $this->grade = $grade;
         $this->mdp = $mdp;
     }
 
-    function setnom_utilisateur($nom_utilisateur){
+    function setnom_utilisateur(string $nom_utilisateur){
         $this->nom_utilisateur = $nom_utilisateur;
     }
-    function setgrade($grade){
+    function setgrade(string $grade){
         $this->grade = $grade;
     }
-    function setmdp($mdp){
+    function setmdp(string $mdp){
         $this->mdp = $mdp;
     }
     
@@ -39,7 +36,7 @@ Class User_{
         return $this->mdp;
     }
 
-    public function create($nom_utilisateur, $grade, $mdp){
+    public function create(){
         $stmt = $sql->prepare("INSERT INTO User (nom_utilisateur, grade, mdp) VALUES (:nom_utilisateur, :grade :mdp);");
         $stmt->bindparam(":nom_utilisateur",$nom_utilisateur);
         $stmt->bindparam(":grade",$grade);
