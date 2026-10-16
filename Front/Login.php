@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a class="aNavBar" href="../Index.html"><strong>Accueil</strong></a>
             <a class="aNavBar" href="Animation.html"><strong>Animations</strong></a>
             <a class="aNavBar" href="Musee.html"><strong>Musée</strong></a>
-            <a class="aNavBar" href=""><strong>Billeterie</strong></a>
+            <a class="aNavBar" href="Billeterie.html"><strong>Billeterie</strong></a>
             <div class="container_logo_login"><a class="logo_login" href="Login.php"><img src="/illustrations/Icône profil avec badge circulaire.png"></a>
         </nav>
     </header>

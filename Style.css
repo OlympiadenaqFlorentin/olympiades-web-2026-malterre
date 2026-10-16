@@ -205,28 +205,118 @@ h1, h2, h3, p{
 }
 
 /*------------------------Musee------------------------*/
-.presentation_Musee{
-    border-radius: 2rem;
+.presentation_Musee {
     background-color: #991900;
-    height: auto;
-    width: 50%;
-    padding: 2%;
+    color: white;
+
+    width: 92%;
+    margin: 2% auto;
+    padding: 4% 3.5%;
+    box-sizing: border-box;
+
+    border-radius: 3rem;
+
+    font-family: 'Montserrat', sans-serif;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Titre */
+.presentation_Musee h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+
+    margin: 0 0 1.5rem 0;
+}
+
+/* Texte descriptif */
+.presentation_Musee p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+
+    margin: 0;
+}
+
+/* Effet au survol */
+.presentation_Musee:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Adaptation aux téléphones */
+@media (max-width: 768px) {
+    .presentation_Musee {
+        width: 94%;
+        padding: 2rem 1.5rem;
+        border-radius: 2rem;
+    }
+
+    .presentation_Musee h2 {
+        font-size: 1.8rem;
+    }
+
+    .presentation_Musee p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
 }
 
 /*------------------------Musee-tarifs-----------------------*/
-.tarifs-musée{
-    background-image: url('/illustrations/tarifs-musée-1.png');
-    border-radius: 2rem;
-    background-color: #991900;
-    height: auto;
+
+.tarifs-musée {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     width: 20%;
-    margin: 20%;
+    height: auto;
+    margin: 2%;
+    padding: 2rem;
+    background-color: #991900;
+    border-radius: 2rem;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.txt_tarifs{
+
+.tarifs-musée::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url('/illustrations/tarifs-musée-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: inherit;
+    transition: transform 0.5s ease, filter 0.4s ease;
+}
+.tarifs-musée:hover::before {
+    transform: scale(1.12);
+    filter: blur(4px);
+}
+.tarifs-musée:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+.txt_tarifs {
+    position: relative;
+    z-index: 1;
     padding: 5%;
-    justify-content: center;
-    align-items: center;
-} 
+    text-align: center;
+}
+.tarifs-musée::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: inherit;
+    transition: background 0.4s ease;
+}
+.tarifs-musée:hover::after {
+    background: rgba(0, 0, 0, 0.4);
+}
+
 /*------------------------Login-----------------------*/
 body.body-Login {
     background-image: url('/illustrations/Fond_RaceParc.png');
@@ -245,54 +335,177 @@ body.body-Login {
     width: 25%;
 }
 /*------------------------Atractions-----------------------*/
-.container_attractions{
-    display: flex;
-}
-.container_txt_attractions{
-    background: #991900;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    margin: 10%;
-    padding: 2%;
-    width: 25%;
-    height: auto;
-}
-.container_info_attractions{
-    margin-left: 0%;
-    background: #991900;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    margin: 10%;
-    padding: 2%;
-    width: 25%;
-    height: auto; 
-}
-.Status{
-    background-color: black;
-    border-radius: 2rem;
-    height: 10%;
-    width: 20%;
-    display: flex;
-    justify-content: center;
+
+.btn-retour {
+    display: inline-flex;
     align-items: center;
-    margin-right: 5%;
-    margin-left: 5%;
+    gap: 10px;
+    margin: 25px 0 0 5%;
+    padding: 10px 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    background: #1a1a1a;
+    border: 1px solid #383838;
+    border-radius: 30px;
+    transition: all 0.25s ease;
 }
-.Taille{
-    background-color: black;
-    border-radius: 2rem;
-    margin-right: 5%;
-    margin-left: 5%;
-    padding-left: 2%;
-    padding-right: 2%;
+.fleche {
+    font-size: 22px;
+    line-height: 1;
+    color: white;
+    transition: transform 0.25s ease;
 }
-.Temps{
-    background-color: black;
-    border-radius: 2rem;
-    height: 10%;
-    width: 45%;
+.btn-retour:hover {
+    background: #991900;
+    border-color: #991900;
+}
+.btn-retour:hover .fleche {
+    transform: translateX(-4px);
+}
+.btn-retour:focus-visible {
+    outline: 2px solid #ff321c;
+    outline-offset: 4px;
+}
+
+.container_attractions {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr);
+    align-items: start;
+    gap: 40px;
+    max-width: 1400px;
+    width: calc(100% - 60px);
+    margin: 50px auto;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.container_txt_attractions {
+    padding: 25px 10px;
+}
+.titre {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 25px;
+    color: white;
+}
+.container_txt_attractions p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #d6d6d6;
+    margin: 0;
+}
+.container_txt_attractions strong {
+    color: white;
+}
+.position {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-top: 5%;
+    gap: 10px;
 }
+.container_info_attractions {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 540px;
+    padding: 32px;
+
+    background: linear-gradient(145deg, #991900, #741400);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+.titre-info {
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0 0 28px;
+}
+.position {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.Status,
+.Taille {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: #111214;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    padding: 13px 18px;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+.indicateur-ouvert {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #35d07f;
+    box-shadow: 0 0 10px rgba(53, 208, 127, 0.45);
+}
+.indicateur-fermé{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+    box-shadow: 0 0 10px red;
+}
+.Temps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 18px;
+    background: #111214;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    font-size: 15px;
+}
+.Temps span {
+    color: #c8c8c8;
+}
+
+.Temps strong {
+    color: white;
+    font-size: 20px;
+}
+.Status,
+.Taille,
+.Temps {
+    transition: transform 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.Status:hover,
+.Taille:hover,
+.Temps:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 850px) {
+    .container_info_attractions {
+        padding: 24px;
+    }
+
+    .titre-info {
+        font-size: 28px;
+    }
+
+    .Status,
+    .Taille {
+        font-size: 13px;
+        padding: 11px 14px;
+    }
+}
+
