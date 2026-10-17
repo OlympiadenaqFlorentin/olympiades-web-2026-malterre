@@ -1,20 +1,41 @@
 <?php
+session_start();
 require_once __DIR__ . '/../Back/PDO.php';
 require_once __DIR__ . '/../Back/Class_User.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $nom_utilisateur = trim($_POST['nom_utilisateur'] ?? '');
-    $grade = trim($_POST['grade'] ?? '');
-    $mdp = trim($_POST['mdp'] ?? '');
+    $mdp = $_POST['mdp'] ?? '';
 
-    $mdp = password_hash($mdp, PASSWORD_BCRYPT);
+    // Vérifier que les champs sont remplis
+    if ($nom_utilisateur === '' || $mdp === '') {
+        echo "Veuillez remplir tous les champs.";
+        exit;
+    }
 
+    // Créer l'objet utilisateur
     $user = new User_($pdo);
-    $user->create($nom_utilisateur, $grade, $mdp);
 
-    echo 'insert réussie';
-    exit;
-};
+    // Vérifier le nom d'utilisateur et le mot de passe
+    if ($user->connexion($nom_utilisateur, $mdp)) {
+
+        // Connexion réussie
+        session_regenerate_id(true);
+
+        $_SESSION['nom_utilisateur'] = $user->getnom_utilisateur();
+
+        // Redirection après connexion
+        header('Location: Admin.php');
+        exit;
+
+    } else {
+        // Identifiants incorrects
+        echo "Nom d'utilisateur ou mot de passe incorrect.";
+        exit;
+    }
+}
+?>
 ?>
 
 <!DOCTYPE html>

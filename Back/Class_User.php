@@ -1,47 +1,82 @@
 <?php
 require_once __DIR__ . '/PDO.php';
-Class User_{
-    private $pdo;
+
+class User_ {
+    private PDO $pdo;
+
     public $nom_utilisateur;
     public $grade;
     public $mdp;
 
-    function __construct(string $nom_utilisateur, string $grade, string $mdp){
+    public function __construct(PDO $db) {
+        $this->pdo = $db;
+    }
+
+    public function setnom_utilisateur(string $nom_utilisateur): void {
         $this->nom_utilisateur = $nom_utilisateur;
+    }
+
+    public function setgrade(string $grade): void {
         $this->grade = $grade;
+    }
+
+    public function setmdp(string $mdp): void {
         $this->mdp = $mdp;
     }
 
-    function setnom_utilisateur(string $nom_utilisateur){
-        $this->nom_utilisateur = $nom_utilisateur;
-    }
-    function setgrade(string $grade){
-        $this->grade = $grade;
-    }
-    function setmdp(string $mdp){
-        $this->mdp = $mdp;
-    }
-    
-    
-    function getid(){
-        return $this->id;
-    }
-    function getnom_utilisateur(){
+    public function getnom_utilisateur() {
         return $this->nom_utilisateur;
     }
-    function getgrade(){
+
+    public function getgrade() {
         return $this->grade;
     }
-    function getmdp(){
+
+    public function getmdp() {
         return $this->mdp;
     }
 
-    public function create(){
-        $stmt = $sql->prepare("INSERT INTO User (nom_utilisateur, grade, mdp) VALUES (:nom_utilisateur, :grade :mdp);");
-        $stmt->bindparam(":nom_utilisateur",$nom_utilisateur);
-        $stmt->bindparam(":grade",$grade);
-        $stmt->bindparam(":mdp",$mdp);
+    public function create(
+    string $nom_utilisateur,
+    string $grade,
+    string $mdp
+    ): bool {
+        $sql = "INSERT INTO User_ (nom_utilisateur, grade, mdp)
+                VALUES (:nom_utilisateur, :grade, :mdp)";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindValue(':nom_utilisateur', $nom_utilisateur);
+        $stmt->bindValue(':grade', $grade);
+        $stmt->bindValue(':mdp', $mdp);
+
         return $stmt->execute();
+    }
+
+    
+    public function connexion(string $nom_utilisateur, string $mdp): bool
+    {
+        // Rechercher l'utilisateur dans la base de données
+        $sql = "SELECT * FROM User_ WHERE nom_utilisateur = :nom_utilisateur";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':nom_utilisateur', $nom_utilisateur);
+        $stmt->execute();
+
+        $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Vérifier si l'utilisateur existe
+        if (!$utilisateur) {
+            return false;
+        }
+
+        if (!password_verify($mdp, $utilisateur['mdp'])) {
+            return false;
+        }
+
+        $this->nom_utilisateur = $utilisateur['nom_utilisateur'];
+
+        return true;
     }
 }
 ?>
