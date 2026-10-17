@@ -44,5 +44,13 @@ CREATE TABLE attractions(
 
 Insert into User_ (nom_univers, mdp, grade) Values ('Admin', '$2y$10$fi03NPPMXs.oLyZQQcTiXeK9CiFT93T3UadafRmSEz/dC2EShH.KK', 'Admin');
 
+Insert into Univers(nom_univers) Values ('MOTO'),('AUTO');
+
+Insert into attractions (Nom, taille_min, statue, id_univers) values 
+('Rider Max', '120', 'Ouvert', 1), 
+('Balade Motors', '0', 'Ouvert', 1), 
+('La Flame Rouge', '120', 'Ouvert', 2),
+('Le batême des Légendes', '150', 'Ouvert', 2);
+
 
 

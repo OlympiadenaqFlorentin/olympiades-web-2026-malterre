@@ -772,36 +772,41 @@ body.body-Login {
 }
 
 /* --------------Admin----------------------- */
-       
+.titre_Admin{
+    margin: 10%;
+} 
 button {
     border: none;
     padding: 10px 15px;
     border-radius: 6px;
     color: white;
     cursor: pointer;
-    margin: 3px;
+    margin-left: 5%;
 }
 
-.ajouter { background: #16a34a; }
-.modifier { background: #2563eb; }
+.ajouter { background: #FED100 ; }
+.modifier { background: black; }
 .supprimer { background: #dc2626; }
 .fermer { background: #6b7280; }
+.Logout{ background: #FED100 ;}
 
 table {
-    width: 100%;
+    width: 70%;
     border-collapse: collapse;
-    background: white;
+    background-color: #991900;
     margin-top: 20px;
+    margin-left: 5%;
 }
 
 th, td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: left;
+    color: white;
 }
 
 th {
-    background: #172554;
+    background: black;
     color: white;
 }
 

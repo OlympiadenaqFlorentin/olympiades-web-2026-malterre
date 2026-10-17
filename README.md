@@ -98,3 +98,4 @@ chaque attraction a une page dédié qui expose sont temps d'attente / sont stat
 
 ### La Page Admin
 
+L'affichages des attractions est relier a la base de donnée on peut modifier les informatins, les suprimer et ajouter une attraction.
