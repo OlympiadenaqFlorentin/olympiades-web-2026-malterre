@@ -27,7 +27,9 @@ CREATE TABLE Billet(
    id_billet VARCHAR(50) Auto_increment,
    date_billet DATE NOT NULL,
    propriétaire VARCHAR(50) NOT NULL,
-   PRIMARY KEY(id_billet)
+   id_visite INT NOT NULL,
+   PRIMARY KEY(id_billet),
+   FOREIGN KEY(id_visite) REFERENCES Visite_Musee(id_visite)
 );
 
 CREATE TABLE attractions(
@@ -39,3 +41,4 @@ CREATE TABLE attractions(
    PRIMARY KEY(Nom),
    FOREIGN KEY(id_univers) REFERENCES Univers(id_univers)
 );
+
