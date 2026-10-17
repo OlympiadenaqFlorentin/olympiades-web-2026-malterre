@@ -86,7 +86,7 @@ RaceParc/
 
 ### Connexion
 
-La fonctionnalité de connexion ne fonctionne pas actuellement. Elle devait me servir de test pour créer un formulaire de connexion, avec l’ajout d’un grade utilisateur. Cependant, les données ne sont pas enregistrées dans la base de données. Le problème semble provenir du constructeur de ma classe `User`.
+La connection a la page admin fonction, un admin a été créé avec les identifiants suivant: `Admin` et le mot de passe `admin`. Il redirige vers la page Admin pour la gestion du parc.
 
 ### Billetterie
 
@@ -95,3 +95,6 @@ La billetterie est statique : elle ne comporte aucun formulaire de paiement.
 ### Les pages Attractions
 
 chaque attraction a une page dédié qui expose sont temps d'attente / sont status (ouvet / fermer / en panne) et les obligations. Toutes ses informations sont écrite ne dur dans l'html.
+
+### La Page Admin
+

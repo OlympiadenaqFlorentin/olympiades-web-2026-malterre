@@ -24,7 +24,7 @@ CREATE TABLE Visite_Musee(
 );
 
 CREATE TABLE Billet(
-   id_billet VARCHAR(50) Auto_increment,
+   id_billet Int auto_increment,
    date_billet DATE NOT NULL,
    propriétaire VARCHAR(50) NOT NULL,
    id_visite INT NOT NULL,
@@ -41,4 +41,8 @@ CREATE TABLE attractions(
    PRIMARY KEY(Nom),
    FOREIGN KEY(id_univers) REFERENCES Univers(id_univers)
 );
+
+Insert into User_ (nom_univers, mdp, grade) Values ('Admin', '$2y$10$fi03NPPMXs.oLyZQQcTiXeK9CiFT93T3UadafRmSEz/dC2EShH.KK', 'Admin');
+
+
 

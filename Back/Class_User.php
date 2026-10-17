@@ -53,6 +53,17 @@ class User_ {
         return $stmt->execute();
     }
 
+
+    public function selecte(): array
+    {
+        $sql = "SELECT nom_utilisateur,  FROM User_";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     
     public function connexion(string $nom_utilisateur, string $mdp): bool
     {
