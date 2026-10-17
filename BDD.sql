@@ -42,7 +42,7 @@ CREATE TABLE attractions(
    FOREIGN KEY(id_univers) REFERENCES Univers(id_univers)
 );
 
-Insert into User_ (nom_univers, mdp, grade) Values ('Admin', '$2y$10$fi03NPPMXs.oLyZQQcTiXeK9CiFT93T3UadafRmSEz/dC2EShH.KK', 'Admin');
+Insert into User_ (nom_utilisateur, mdp, grade) Values ('Admin', '$2y$10$fi03NPPMXs.oLyZQQcTiXeK9CiFT93T3UadafRmSEz/dC2EShH.KK', 'Admin');
 
 Insert into Univers(nom_univers) Values ('MOTO'),('AUTO');
 
