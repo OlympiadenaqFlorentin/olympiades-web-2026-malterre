@@ -91,3 +91,7 @@ La fonctionnalité de connexion ne fonctionne pas actuellement. Elle devait me s
 ### Billetterie
 
 La billetterie est statique : elle ne comporte aucun formulaire de paiement.
+
+### Les pages Attractions
+
+chaque attraction a une page dédié qui expose sont temps d'attente / sont status (ouvet / fermer / en panne) et les obligations. Toutes ses informations sont écrite ne dur dans l'html.

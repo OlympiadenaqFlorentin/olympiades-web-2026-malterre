@@ -383,6 +383,15 @@ h1, h2, h3, p{
 .famille {
     background-image: url("illustrations/Famille.png");
 }
+.simple {
+    background-image: url("illustrations/simple.png");
+}
+.guide {
+    background-image: url("illustrations/guide.png");
+}
+.VIP {
+    background-image: url("illustrations/vip.png");
+}
 .contenu-tarif {
     padding: 20px;
     display: flex;
@@ -736,8 +745,7 @@ body.body-Login {
 .Status,
 .Taille,
 .Temps {
-    transition: transform 0.2s ease,
-                border-color 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .Status:hover,
